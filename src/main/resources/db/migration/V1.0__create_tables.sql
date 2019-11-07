@@ -1,40 +1,41 @@
-create table if not exists cabinets(
+create table if not exists Cabinets(
     id serial primary key,
     free varchar(255) not null
 );
 
-create table if not exists  teachers(
+create table if not exists Teachers(
     id serial primary key
 );
 
-create table if not exists subjects(
+create table if not exists Subjects(
     id serial primary key,
     subjectscol varchar(255) not null
 );
 
-create table if not exists facultets(
+create table if not exists Facultets(
     id serial primary key
 );
 
-create table if not exists groups(
+create table if not exists Groups(
     id serial primary key,
-    facultet_id int foreign key facultets(id)
+    facultet_id int foreign key Facultets(id)
 );
 
-create table if not exists students(
+create table if not exists Students(
     id serial primary key,
-    group_id int foreign key groups(id)
+    group_id int foreign key Groups(id)
 );
 
-create table if not exists teachers_has_subjects(
-    teacher_id int foreign key groups(id),
-    subject_id int foreign key subjects(id)
+create table if not exists TeachersHasSubjects(
+    teacher_id int foreign key Groups(id),
+    subject_id int foreign key Subjects(id)
 );
 
-create table if not exists students(
+create table if not exists LessonsList(
     id serial primary key,
-    cabinet_id int foreign key cabinets(id),
-    teacher_id int foreign key teachers(id),
-    group_id int foreign key groups(id),
+    cabinet_id int foreign key Cabinets(id),
+    teacher_id int foreign key Teachers(id),
+    group_id int foreign key Groups(id),
 );
+
 
