@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Cabinets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column(name = "free")
     private String free;
@@ -17,16 +17,39 @@ public class Cabinets {
 
     public Cabinets() {}
 
-    public Cabinets(int id, String free) {
+    public Cabinets(long id, String free) {
         this.id = id;
         this.free = free;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setLessonsList(LessonsList lessonsList) {
+        this.lessonsList = lessonsList;
+    }
+
+    public LessonsList getLessonsList() {
+        return lessonsList;
+    }
+
+    public Cabinets(String free, LessonsList lessonsList) {
+        this.free = free;
+        this.lessonsList = lessonsList;
+    }
+
+    public Cabinets(long id, String free, LessonsList lessonsList) {
+        this.id = id;
+        this.free = free;
+        this.lessonsList = lessonsList;
     }
 
     public Cabinets(String free) {
         this.free = free;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

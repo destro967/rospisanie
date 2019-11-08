@@ -10,6 +10,8 @@ public interface FacultetRepository extends JpaRepository<Facultets,Long> {
 
     List<Facultets> findAll();
     List<Facultets> findByName(String name);
-    ///TODO Add name for facultets
-    ///TODO write get/set methods
+
+    Facultets addFacultet(Facultets facultets);
+    Facultets updateFacultet(Facultets newFacultet);
+    void deleteFacultet(Facultets facultets);
 }

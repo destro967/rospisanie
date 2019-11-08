@@ -8,7 +8,10 @@ import java.util.List;
 public class Teachers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    private long id;
+
+    @Column (name = "teacher_name")
+    private String teacherName;
 
     @OneToOne
     private LessonsList lessonsList;
@@ -17,14 +20,42 @@ public class Teachers {
     @JoinTable(name = "teachersassubjects",
                 joinColumns = @JoinColumn(name= "teacher_id"),
                 inverseJoinColumns =@JoinColumn(name = "subject_id") )
-    List<Subjects> subjects;
+    private List<Subjects> subjects;
 
-
-    public Teachers(long id) {
+    public Teachers(long id, String teacherName) {
         this.id = id;
+        this.teacherName = teacherName;
+    }
+
+    public Teachers(String teacherName) {
+        this.teacherName = teacherName;
     }
 
     public Teachers() {
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
+
+    public void setLessonsList(LessonsList lessonsList) {
+        this.lessonsList = lessonsList;
+    }
+
+    public void setSubjects(List<Subjects> subjects) {
+        this.subjects = subjects;
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public LessonsList getLessonsList() {
+        return lessonsList;
+    }
+
+    public List<Subjects> getSubjects() {
+        return subjects;
     }
 
     public long getId() {

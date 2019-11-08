@@ -10,5 +10,9 @@ public interface StudentRepository extends JpaRepository<Students, Long> {
 
     List<Students> findAll();
     List<Students> findAllStudentsByGroup(Groups group);
-    ///TODO write get/set methods
+
+    Students addFacultet(Students students);
+    Students updateFacultet(Students newStudents);
+    void deleteFacultet(Students students);
+
 }

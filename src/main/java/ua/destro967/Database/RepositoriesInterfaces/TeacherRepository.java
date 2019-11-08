@@ -8,6 +8,10 @@ import java.util.List;
 public interface TeacherRepository extends JpaRepository<Teachers,Long> {
 
     List<Teachers> findAll();
+    List<Teachers> findAllByTeacherName();
 
-    ///TODO write get/set methods
+    Teachers addFacultet(Teachers teachers);
+    Teachers updateFacultet(Teachers newTeachers);
+    void deleteFacultet(Teachers teacher);
+
 }

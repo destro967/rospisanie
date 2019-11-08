@@ -30,7 +30,22 @@ public class Groups {
         this.facultet = facultet;
     }
 
-    public Groups(String worckdays,Facultets facultet) {
+    public Groups(String worckdays, LessonsList lessonsList, Facultets facultet, Collection<Students> students) {
+        this.worckdays = worckdays;
+        this.lessonsList = lessonsList;
+        this.facultet = facultet;
+        this.students = students;
+    }
+
+    public Groups(long id, String worckdays, LessonsList lessonsList, Facultets facultet, Collection<Students> students) {
+        this.id = id;
+        this.worckdays = worckdays;
+        this.lessonsList = lessonsList;
+        this.facultet = facultet;
+        this.students = students;
+    }
+
+    public Groups(String worckdays, Facultets facultet) {
         this.worckdays = worckdays;
         this.facultet = facultet;
     }
@@ -38,5 +53,45 @@ public class Groups {
     public Groups() {
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public void setWorckdays(String worckdays) {
+        this.worckdays = worckdays;
+    }
+
+    public void setLessonsList(LessonsList lessonsList) {
+        this.lessonsList = lessonsList;
+    }
+
+    public void setFacultet(Facultets facultet) {
+        this.facultet = facultet;
+    }
+
+    public void setStudents(Collection<Students> students) {
+        this.students = students;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getWorckdays() {
+        return worckdays;
+    }
+
+    public LessonsList getLessonsList() {
+        return lessonsList;
+    }
+
+
+
+    public Facultets getFacultet() {
+        return facultet;
+    }
+
+    public Collection<Students> getStudents() {
+        return students;
+    }
 }

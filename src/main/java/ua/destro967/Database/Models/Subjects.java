@@ -13,11 +13,36 @@ public class Subjects {
     @Column(name = "subjectscol")
     private String subjectscol;
 
+    @Column(name = "subject_name")
+    private String subjectName;
+
+    @OneToOne
+    private LessonsList lessonsList;
+
     @ManyToMany
     @JoinTable(name = "teachershassubjects",
                 joinColumns = @JoinColumn(name = "subject_id"),
                 inverseJoinColumns = @JoinColumn(name = "teacher_id"))
     private List<Teachers> teachers;
+
+    public Subjects(String subjectscol, String subjectName, LessonsList lessonsList, List<Teachers> teachers) {
+        this.subjectscol = subjectscol;
+        this.subjectName = subjectName;
+        this.lessonsList = lessonsList;
+        this.teachers = teachers;
+    }
+
+    public Subjects(long id, String subjectscol, String subjectName, LessonsList lessonsList, List<Teachers> teachers) {
+        this.subjectscol = subjectscol;
+        this.subjectName = subjectName;
+        this.lessonsList = lessonsList;
+        this.teachers = teachers;
+    }
+
+    public Subjects(String subjectscol, List<Teachers> teachers) {
+        this.subjectscol = subjectscol;
+        this.teachers = teachers;
+    }
 
     public Subjects(long id, String subjectscol) {
         this.id = id;
@@ -29,6 +54,14 @@ public class Subjects {
     }
 
     public Subjects() {
+    }
+
+    public void setTeachers(List<Teachers> teachers) {
+        this.teachers = teachers;
+    }
+
+    public List<Teachers> getTeachers() {
+        return teachers;
     }
 
     public long getId() {
