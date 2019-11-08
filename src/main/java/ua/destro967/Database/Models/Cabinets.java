@@ -1,4 +1,4 @@
-package Database.Models;
+package ua.destro967.Database.Models;
 
 import javax.persistence.*;
 

@@ -1,16 +1,17 @@
-package Database.Models;
+package ua.destro967.Database.Models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Students")
+@Table(name = "students")
 public class Students {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @ManyToOne(optional = false , cascade = CascadeType.ALL)
+    @JoinColumn(name = "group_id")
     private Groups group;
 
     public Students(long id, Groups group) {

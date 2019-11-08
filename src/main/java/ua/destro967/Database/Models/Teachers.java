@@ -1,10 +1,10 @@
-package Database.Models;
+package ua.destro967.Database.Models;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "Teachrs")
+@Table(name = "teachrs")
 public class Teachers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +14,7 @@ public class Teachers {
     private LessonsList lessonsList;
 
     @ManyToMany
-    @JoinTable(name = "TeachersHasSubjects",
+    @JoinTable(name = "teachersassubjects",
                 joinColumns = @JoinColumn(name= "teacher_id"),
                 inverseJoinColumns =@JoinColumn(name = "subject_id") )
     List<Subjects> subjects;

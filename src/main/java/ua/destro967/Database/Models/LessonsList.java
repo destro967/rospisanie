@@ -1,9 +1,9 @@
-package Database.Models;
+package ua.destro967.Database.Models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "LessonsList")
+@Table(name = "lessonsList")
 public class LessonsList {
 
     @Id

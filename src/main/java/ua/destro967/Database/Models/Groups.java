@@ -1,10 +1,10 @@
-package Database.Models;
+package ua.destro967.Database.Models;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Collection;
 
 @Entity
-@Table(name = "Groups")
+@Table(name = "groups")
 public class Groups {
 
     @Id
@@ -17,11 +17,11 @@ public class Groups {
     @OneToOne
     private LessonsList lessonsList;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     private Facultets facultet;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL)
-    private List<Students> students;
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+    private Collection<Students> students;
 
 
     public Groups(long id, String worckdays, Facultets facultet) {
