@@ -9,9 +9,10 @@ public class Groups {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
-    @Column(name = "worckdays")
+    @Column(name = "worck_days")
     private String worckdays;
 
     @OneToOne
@@ -93,5 +94,16 @@ public class Groups {
 
     public Collection<Students> getStudents() {
         return students;
+    }
+
+    @Override
+    public String toString() {
+        return "Groups{" +
+                "id=" + id +
+                ", worckdays='" + worckdays + '\'' +
+                ", lessonsList=" + lessonsList +
+                ", facultet=" + facultet +
+                ", students=" + students +
+                '}';
     }
 }

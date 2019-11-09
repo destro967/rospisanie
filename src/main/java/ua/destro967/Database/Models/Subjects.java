@@ -8,6 +8,7 @@ import java.util.List;
 public class Subjects {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "subjectscol")
@@ -78,5 +79,16 @@ public class Subjects {
 
     public void setSubjectscol(String subjectscol) {
         this.subjectscol = subjectscol;
+    }
+
+    @Override
+    public String toString() {
+        return "Subjects{" +
+                "id=" + id +
+                ", subjectscol='" + subjectscol + '\'' +
+                ", subjectName='" + subjectName + '\'' +
+                ", lessonsList=" + lessonsList +
+                ", teachers=" + teachers +
+                '}';
     }
 }

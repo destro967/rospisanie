@@ -10,12 +10,7 @@ public interface LessonListRepository extends JpaRepository<LessonsList,Long> {
     List<LessonsList> findAll();
     List<LessonsList> findAllByCabinet(Cabinets cabinet);
     List<LessonsList> findAllByTeacher(Teachers teacher);
-    List<LessonsList> findAllByGroups(Groups group);
+    List<LessonsList> findAllByGroup(Groups group);
     List<LessonsList> findAllBySubject(Subjects subject);
     List<LessonsList> findAllByTeacherAndCabinetAndGroupAndSubject(Teachers teacher, Cabinets cabinet, Groups group, Subjects subject);
-
-    LessonsList addFacultet(LessonsList lessonsList);
-    LessonsList updateFacultet(Facultets newLessonList);
-    void deleteFacultet(LessonsList lessonsList);
-
 }

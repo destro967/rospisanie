@@ -9,12 +9,13 @@ public class Facultets {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "facultet_name")
     private String facultetName;
 
-    @OneToMany(mappedBy = "group_id", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
     private List<Groups> groups ;
 
 
@@ -59,5 +60,14 @@ public class Facultets {
 
     public List<Groups> getGroups() {
         return groups;
+    }
+
+    @Override
+    public String toString() {
+        return "Facultets{" +
+                "id=" + id +
+                ", facultetName='" + facultetName + '\'' +
+                ", groups=" + groups +
+                '}';
     }
 }

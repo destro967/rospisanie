@@ -21,6 +21,7 @@ create table if   not exists facultets(
 
 create table if   not exists groups(
     id serial     primary key,
+    work_days     varchar (255) not null,
     facultet_id   int references facultets(id)
 );
 

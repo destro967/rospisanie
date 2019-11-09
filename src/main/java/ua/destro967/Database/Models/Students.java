@@ -8,6 +8,7 @@ public class Students {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     long id;
 
     @ManyToOne(optional = false , cascade = CascadeType.ALL)
@@ -40,5 +41,14 @@ public class Students {
 
     public void setGroup(Groups group) {
         this.group = group;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "id=" + id +
+                ", group=" + group +
+                '}';
     }
 }

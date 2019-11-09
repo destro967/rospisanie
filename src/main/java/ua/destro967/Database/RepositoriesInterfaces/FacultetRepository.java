@@ -9,9 +9,5 @@ import java.util.List;
 public interface FacultetRepository extends JpaRepository<Facultets,Long> {
 
     List<Facultets> findAll();
-    List<Facultets> findByName(String name);
-
-    Facultets addFacultet(Facultets facultets);
-    Facultets updateFacultet(Facultets newFacultet);
-    void deleteFacultet(Facultets facultets);
+    List<Facultets> findByFacultetName(String name);
 }

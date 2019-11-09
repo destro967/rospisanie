@@ -12,10 +12,4 @@ public interface GroupRepository extends JpaRepository<Groups,Long> {
     List<Groups> findAll();
     List<Groups> findAllByWorckdays(String workdays);
     List<Groups> findAllByFacultet(Facultets facultet);
-
-    Groups addFacultet(Groups groups);
-    Groups updateFacultet(Groups newGroup);
-    void deleteFacultet(Groups groups);
-
-    ///TODO write get/set methods
 }

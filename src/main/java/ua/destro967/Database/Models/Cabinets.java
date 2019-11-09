@@ -7,13 +7,14 @@ import javax.persistence.*;
 public class Cabinets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private long id;
 
     @Column(name = "free")
     private String free;
 
-    @OneToOne
-    private LessonsList lessonsList;
+    /*@OneToOne
+    private LessonsList lessonsList;*/
 
     public Cabinets() {}
 
@@ -26,24 +27,24 @@ public class Cabinets {
         this.id = id;
     }
 
-    public void setLessonsList(LessonsList lessonsList) {
+   /* public void setLessonsList(LessonsList lessonsList) {
         this.lessonsList = lessonsList;
     }
 
     public LessonsList getLessonsList() {
         return lessonsList;
-    }
+    }*/
 
-    public Cabinets(String free, LessonsList lessonsList) {
+    /*public Cabinets(String free, LessonsList lessonsList) {
         this.free = free;
         this.lessonsList = lessonsList;
-    }
+    }*/
 
-    public Cabinets(long id, String free, LessonsList lessonsList) {
+    /*public Cabinets(long id, String free, LessonsList lessonsList) {
         this.id = id;
         this.free = free;
         this.lessonsList = lessonsList;
-    }
+    }*/
 
     public Cabinets(String free) {
         this.free = free;
@@ -64,4 +65,14 @@ public class Cabinets {
     public void setFree(String free) {
         this.free = free;
     }
+
+    @Override
+    public String toString() {
+        return "Cabinets{" +
+                "id=" + id +
+                ", free='" + free + '\'' +
+       //         ", lessonsList=" + lessonsList +
+                '}';
+    }
 }
+

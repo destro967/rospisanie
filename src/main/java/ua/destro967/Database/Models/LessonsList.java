@@ -8,22 +8,23 @@ public class LessonsList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     long id;
 
-    @OneToOne
-    @JoinColumn(name ="cabinet_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name ="cabinet_id", referencedColumnName = "id")
     private Cabinets cabinet;
 
-    @OneToOne
-    @JoinColumn(name = "teacher_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "teacher_id", referencedColumnName = "id")
     private Teachers teacher;
 
-    @OneToOne
-    @JoinColumn(name = "group_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "group_id", referencedColumnName = "id")
     private Groups group;
 
-    @OneToOne
-    @JoinColumn(name = "subject_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "subject_id", referencedColumnName = "id")
     private Subjects subject;
 
     public LessonsList() {
@@ -89,5 +90,14 @@ public class LessonsList {
         return group;
     }
 
-
+    @Override
+    public String toString() {
+        return "LessonsList{" +
+                "id=" + id +
+                ", cabinet=" + cabinet +
+                ", teacher=" + teacher +
+                ", group=" + group +
+                ", subject=" + subject +
+                '}';
+    }
 }
