@@ -32,7 +32,7 @@ create table if   not exists students(
 );
 
 create table if   not exists teachersHasSubjects(
-    teacher_id    int references groups(id),
+    teacher_id    int references teachers(id),
     subject_id    int references subjects(id)
 );
 

@@ -13,4 +13,9 @@ public interface LessonListRepository extends JpaRepository<LessonsList,Long> {
     List<LessonsList> findAllByGroup(Groups group);
     List<LessonsList> findAllBySubject(Subjects subject);
     List<LessonsList> findAllByTeacherAndCabinetAndGroupAndSubject(Teachers teacher, Cabinets cabinet, Groups group, Subjects subject);
+    void              removeAllByCabinetId(long id);
+    void              removeAllByTeacherId(long id);
+    void              removeAllByGroupId(long id);
+    void              removeAllBySubjectId(long id);
+
 }

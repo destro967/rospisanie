@@ -17,9 +17,6 @@ public class Subjects {
     @Column(name = "subject_name")
     private String subjectName;
 
-    @OneToOne
-    private LessonsList lessonsList;
-
     @ManyToMany
     @JoinTable(name = "teachershassubjects",
                 joinColumns = @JoinColumn(name = "subject_id"),
@@ -29,14 +26,12 @@ public class Subjects {
     public Subjects(String subjectscol, String subjectName, LessonsList lessonsList, List<Teachers> teachers) {
         this.subjectscol = subjectscol;
         this.subjectName = subjectName;
-        this.lessonsList = lessonsList;
         this.teachers = teachers;
     }
 
     public Subjects(long id, String subjectscol, String subjectName, LessonsList lessonsList, List<Teachers> teachers) {
         this.subjectscol = subjectscol;
         this.subjectName = subjectName;
-        this.lessonsList = lessonsList;
         this.teachers = teachers;
     }
 
@@ -87,7 +82,6 @@ public class Subjects {
                 "id=" + id +
                 ", subjectscol='" + subjectscol + '\'' +
                 ", subjectName='" + subjectName + '\'' +
-                ", lessonsList=" + lessonsList +
                 ", teachers=" + teachers +
                 '}';
     }

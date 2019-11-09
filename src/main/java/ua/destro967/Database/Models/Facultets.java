@@ -15,20 +15,14 @@ public class Facultets {
     @Column(name = "facultet_name")
     private String facultetName;
 
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
-    private List<Groups> groups ;
-
-
 
     public Facultets(long id, String facultetName, List<Groups> groups) {
         this.id = id;
         this.facultetName = facultetName;
-        this.groups = groups;
     }
 
     public Facultets(String facultetName, List<Groups> groups) {
         this.facultetName = facultetName;
-        this.groups = groups;
     }
 
     public Facultets(String facultetName) {
@@ -50,24 +44,17 @@ public class Facultets {
         this.facultetName = facultetName;
     }
 
-    public void setGroups(List<Groups> groups) {
-        this.groups = groups;
-    }
 
     public String getFacultetName() {
         return facultetName;
     }
 
-    public List<Groups> getGroups() {
-        return groups;
-    }
 
     @Override
     public String toString() {
         return "Facultets{" +
                 "id=" + id +
                 ", facultetName='" + facultetName + '\'' +
-                ", groups=" + groups +
                 '}';
     }
 }

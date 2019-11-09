@@ -8,4 +8,9 @@ import java.util.List;
 public interface CabinetRepository extends JpaRepository<Cabinets,Long> {
     List<Cabinets>  findAll();
     List<Cabinets>  findAllByFree(String free);
+    Cabinets        findById(long id);
+
+    void            removeById(long id);
+
+    Cabinets        save(Cabinets cabinet);
 }

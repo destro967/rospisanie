@@ -13,7 +13,7 @@ public class Cabinets {
     @Column(name = "free")
     private String free;
 
-    /*@OneToOne
+/*    @OneToOne
     private LessonsList lessonsList;*/
 
     public Cabinets() {}

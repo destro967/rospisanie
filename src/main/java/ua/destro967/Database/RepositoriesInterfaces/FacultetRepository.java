@@ -10,4 +10,11 @@ public interface FacultetRepository extends JpaRepository<Facultets,Long> {
 
     List<Facultets> findAll();
     List<Facultets> findByFacultetName(String name);
+    Facultets       findById(long id);
+
+    void            removeAllByFacultetName(String facultetName);
+    void            removeById(long id);
+
+    Facultets       save(Facultets facultets);
+
 }

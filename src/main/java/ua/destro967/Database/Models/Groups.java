@@ -15,15 +15,11 @@ public class Groups {
     @Column(name = "worck_days")
     private String worckdays;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private LessonsList lessonsList;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL)
     private Facultets facultet;
-
-    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
-    private Collection<Students> students;
-
 
     public Groups(long id, String worckdays, Facultets facultet) {
         this.id = id;
@@ -35,7 +31,6 @@ public class Groups {
         this.worckdays = worckdays;
         this.lessonsList = lessonsList;
         this.facultet = facultet;
-        this.students = students;
     }
 
     public Groups(long id, String worckdays, LessonsList lessonsList, Facultets facultet, Collection<Students> students) {
@@ -43,7 +38,6 @@ public class Groups {
         this.worckdays = worckdays;
         this.lessonsList = lessonsList;
         this.facultet = facultet;
-        this.students = students;
     }
 
     public Groups(String worckdays, Facultets facultet) {
@@ -51,8 +45,7 @@ public class Groups {
         this.facultet = facultet;
     }
 
-    public Groups() {
-    }
+    public Groups() {}
 
     public void setId(long id) {
         this.id = id;
@@ -68,10 +61,6 @@ public class Groups {
 
     public void setFacultet(Facultets facultet) {
         this.facultet = facultet;
-    }
-
-    public void setStudents(Collection<Students> students) {
-        this.students = students;
     }
 
     public long getId() {
@@ -92,9 +81,6 @@ public class Groups {
         return facultet;
     }
 
-    public Collection<Students> getStudents() {
-        return students;
-    }
 
     @Override
     public String toString() {
@@ -103,7 +89,6 @@ public class Groups {
                 ", worckdays='" + worckdays + '\'' +
                 ", lessonsList=" + lessonsList +
                 ", facultet=" + facultet +
-                ", students=" + students +
                 '}';
     }
 }

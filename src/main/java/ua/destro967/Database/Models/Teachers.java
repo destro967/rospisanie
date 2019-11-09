@@ -14,9 +14,6 @@ public class Teachers {
     @Column (name = "teacher_name")
     private String teacherName;
 
-    @OneToOne
-    private LessonsList lessonsList;
-
     @ManyToMany
     @JoinTable(name = "teachersassubjects",
                 joinColumns = @JoinColumn(name= "teacher_id"),
@@ -39,9 +36,6 @@ public class Teachers {
         this.teacherName = teacherName;
     }
 
-    public void setLessonsList(LessonsList lessonsList) {
-        this.lessonsList = lessonsList;
-    }
 
     public void setSubjects(List<Subjects> subjects) {
         this.subjects = subjects;
@@ -51,9 +45,6 @@ public class Teachers {
         return teacherName;
     }
 
-    public LessonsList getLessonsList() {
-        return lessonsList;
-    }
 
     public List<Subjects> getSubjects() {
         return subjects;
@@ -72,7 +63,6 @@ public class Teachers {
         return "Teachers{" +
                 "id=" + id +
                 ", teacherName='" + teacherName + '\'' +
-                ", lessonsList=" + lessonsList +
                 ", subjects=" + subjects +
                 '}';
     }

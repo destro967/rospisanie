@@ -15,6 +15,23 @@ public class Students {
     @JoinColumn(name = "group_id")
     private Groups group;
 
+    @Column(name ="student_name")
+    private String studentName;
+
+    public Students(long id, Groups group, String studentName) {
+        this.id = id;
+        this.group = group;
+        this.studentName = studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
     public Students(long id, Groups group) {
         this.id = id;
         this.group = group;
