@@ -1,21 +1,10 @@
 package ua.destro967.Database.RepositoriesInterfaces;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import ua.destro967.Database.Models.*;
 
-import java.util.List;
 
-public interface LessonListRepository extends JpaRepository<LessonsList,Long> {
+public interface LessonListRepository extends CrudRepository<LessonsList,Long> {
 
-    List<LessonsList> findAll();
-    List<LessonsList> findAllByCabinet(Cabinets cabinet);
-    List<LessonsList> findAllByTeacher(Teachers teacher);
-    List<LessonsList> findAllByGroup(Groups group);
-    List<LessonsList> findAllBySubject(Subjects subject);
-    List<LessonsList> findAllByTeacherAndCabinetAndGroupAndSubject(Teachers teacher, Cabinets cabinet, Groups group, Subjects subject);
-    void              removeAllByCabinetId(long id);
-    void              removeAllByTeacherId(long id);
-    void              removeAllByGroupId(long id);
-    void              removeAllBySubjectId(long id);
 
 }

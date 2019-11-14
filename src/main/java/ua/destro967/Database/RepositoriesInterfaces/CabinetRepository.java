@@ -1,16 +1,15 @@
 package ua.destro967.Database.RepositoriesInterfaces;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import ua.destro967.Database.Models.Cabinets;
 
 import java.util.List;
 
-public interface CabinetRepository extends JpaRepository<Cabinets,Long> {
+public interface CabinetRepository extends CrudRepository<Cabinets,Long> {
     List<Cabinets>  findAll();
-    List<Cabinets>  findAllByFree(String free);
-    Cabinets        findById(long id);
+    List<Cabinets>  findAllByFree(@Param("free") String free);
+    Cabinets        findById(@Param("id") long id);
 
-    void            removeById(long id);
-
-    Cabinets        save(Cabinets cabinet);
+    Cabinets        removeAllById(@Param("id") long id);
 }

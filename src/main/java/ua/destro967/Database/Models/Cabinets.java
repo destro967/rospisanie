@@ -13,9 +13,6 @@ public class Cabinets {
     @Column(name = "free")
     private String free;
 
-/*    @OneToOne
-    private LessonsList lessonsList;*/
-
     public Cabinets() {}
 
     public Cabinets(long id, String free) {
