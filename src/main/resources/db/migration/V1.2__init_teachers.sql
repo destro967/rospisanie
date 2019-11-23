@@ -1,1 +1,0 @@
-insert into teachers(teacher_name) values ('Max');

@@ -31,12 +31,12 @@ create table if   not exists students(
     student_naem  varchar (255) not null
 );
 
-create table if   not exists teachersHasSubjects(
+create table if   not exists teachers_has_subjects(
     teacher_id    int references teachers(id),
     subject_id    int references subjects(id)
 );
 
-create table if   not exists lessonsList(
+create table if   not exists lessons_list(
     id serial     primary key,
     cabinet_id    int references cabinets(id),
     teacher_id    int references teachers(id),

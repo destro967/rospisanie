@@ -1,1 +1,0 @@
-insert into groups(work_days, facultet_id) values ('{all}',1);

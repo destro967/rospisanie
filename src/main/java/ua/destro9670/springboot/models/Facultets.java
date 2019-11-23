@@ -1,27 +1,19 @@
-package ua.destro967.Database.Models;
+package ua.destro9670.springboot.models;
 
 import javax.persistence.*;
-import java.util.List;
 
-@Entity
-@Table(name = "facultets")
+@Entity(name = "facultets")
 public class Facultets {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private long id;
 
     @Column(name = "facultet_name")
     private String facultetName;
 
-
-    public Facultets(long id, String facultetName, List<Groups> groups) {
+    public Facultets(long id, String facultetName) {
         this.id = id;
-        this.facultetName = facultetName;
-    }
-
-    public Facultets(String facultetName, List<Groups> groups) {
         this.facultetName = facultetName;
     }
 
@@ -30,6 +22,7 @@ public class Facultets {
     }
 
     public Facultets() {
+
     }
 
     public long getId() {
@@ -40,21 +33,19 @@ public class Facultets {
         this.id = id;
     }
 
-    public void setFacultetName(String facultetName) {
-        this.facultetName = facultetName;
-    }
-
-
     public String getFacultetName() {
         return facultetName;
     }
 
+    public void setFacultetName(String facultetName) {
+        this.facultetName = facultetName;
+    }
 
     @Override
     public String toString() {
-        return "Facultets{" +
-                "id=" + id +
-                ", facultetName='" + facultetName + '\'' +
+        return "{" +
+                "\"id\"=" + id +
+                ",\n\"facultetName\"=\"" + facultetName + '\"' +
                 '}';
     }
 }

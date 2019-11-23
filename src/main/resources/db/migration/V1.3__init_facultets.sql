@@ -1,1 +1,0 @@
-insert into facultets(facultet_name) values ('iszzi');
